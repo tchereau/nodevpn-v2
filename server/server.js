@@ -12,14 +12,14 @@ let webserver = https.createServer({
 }, (req, res) => {
   res.writeHead(200);
   res.end('hello world')
-}).listen(443);
+}).listen(process.env.PORT);
 
 const tap = new Tap();
 
 try{
 
     tap.mtu = 1400;
-    tap.ipv4 = "10.11.12.1/24";
+    tap.ipv4 = process.env.IPV4;
     tap.isUp = true;
     console.log(`created tap: ${tap.name}, ip: ${tap.ipv4}, mtu: ${tap.mtu}`);
 }catch(e){
