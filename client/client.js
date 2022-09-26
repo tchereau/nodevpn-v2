@@ -15,7 +15,9 @@ try{
 }
 
 //connect to websocket server
-const ws = new WebSocket (process.env.WSURL);
+const ws = new WebSocket (process.env.WSURL,{
+    rejectUnauthorized: process.env.REJECTUNAUTHORIZED
+});
 ws.on('open', function open() {
     if(tap) {
         tap.on('data', (buf) => {
