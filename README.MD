@@ -1,6 +1,6 @@
 #nodevpn v2
 
-if error ```no such file or directory, open '/dev/net/tun'````
+if error ```no such file or directory, open '/dev/net/tun'```
 
 ```bash
 mkdir -p /dev/net
